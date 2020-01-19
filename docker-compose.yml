@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/go/src/
     working_dir: /go/src/
-    command: "go run cmd/main.go" 
+    command: bash -c "go mod download && go run cmd/main.go"
     ports:
         - "10000:10000"
     env_file:

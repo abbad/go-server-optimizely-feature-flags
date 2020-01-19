@@ -16,7 +16,7 @@ UUID: 123231-2122112-12212121 (UUID v4)
 If you set the following cookie `__test_user` to `"true"`
 It will pass it as an attribute to `getEnabledFeatures` attribute. 
 
-Here is the main function that does the heavy lifting, this snippet take from this repo `pkg/featureflags/featureflags.go`
+Here is the main function that does the heavy lifting, this snippet is taken from this repo `pkg/featureflags/featureflags.go`
 
 ```
 func (optiService *OptiService) GetEnabledFeatures(w http.ResponseWriter, r *http.Request) {
@@ -45,17 +45,11 @@ func (optiService *OptiService) GetEnabledFeatures(w http.ResponseWriter, r *htt
 ## TO Run. 
 
 1. Install docker. 
-2. Run `docker-compose run golang bash`
-3. For some reason `go.mod` is not working. Installing dependencies is done manually. 
-
-    1. `go get github.com/google/uuid`
-    2. `go get github.com/optimizely/go-sdk`
-    This is not ideal. 
-4. cp .env.template .env and get optimizely SDK key.  
-5. Exit docker and run docker-compose up. Your server should be running on localhost:10000
+2. cp .env.template .env and get optimizely SDK key.  
+3. execute `docker-compose up`.  The server should be running on localhost:10000
 
 
 ## TODO:
-1. Fix go.mod file and make it work. 
-2. Inside pkg/featureflags, fix multiple imports from the same package. 
+1. Inside pkg/featureflags, fix multiple imports from the same package. 
+2. write tests
 3. Load test and see how many requests per sec this server can handle.	
