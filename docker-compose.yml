@@ -1,0 +1,12 @@
+version: "3"
+services:
+  golang:
+    image: "golang:1.13.6"
+    volumes:
+      - .:/go/src/
+    working_dir: /go/src/
+    command: "go run cmd/main.go" 
+    ports:
+        - "10000:10000"
+    env_file:
+        - .env
