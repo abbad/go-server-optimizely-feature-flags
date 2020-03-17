@@ -16,7 +16,7 @@ UUID: 123231-2122112-12212121 (UUID v4)
 If you set the following cookie `__test_user` to `"true"`
 It will pass it as an attribute to `getEnabledFeatures` attribute. 
 
-Here is the main function that does the heavy lifting, this snippet is taken from this repo `pkg/featureflags/featureflags.go`
+Here is the main function that does the heavy lifting, this snippet is taken from this module within the repo `pkg/featureflags/featureflags.go`
 
 ```
 func (optiService *OptiService) GetEnabledFeatures(w http.ResponseWriter, r *http.Request) {
@@ -50,6 +50,4 @@ func (optiService *OptiService) GetEnabledFeatures(w http.ResponseWriter, r *htt
 
 
 ## TODO:
-1. Inside pkg/featureflags, fix multiple imports from the same package. 
-2. write tests
-3. Load test and see how many requests per sec this server can handle.	
+1. write tests

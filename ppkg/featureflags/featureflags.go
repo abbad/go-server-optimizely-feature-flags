@@ -17,7 +17,7 @@ type OptiService struct {
 	Client *client.OptimizelyClient
 }
 
-// GetClient sends you back optmilzely client.
+// GetClient sends you back optimizely client.
 func GetClient(sdkKey string) *client.OptimizelyClient {
 	var optClient, err = optly.Client(sdkKey)
 	checkError(err)
@@ -25,7 +25,7 @@ func GetClient(sdkKey string) *client.OptimizelyClient {
 	return optClient
 }
 
-// GetEnabledFeatures get which features are enabled for users
+// GetEnabledFeatures get which features are enabled for users.
 func (optiService *OptiService) GetEnabledFeatures(w http.ResponseWriter, r *http.Request) {
 	log.Println("Endpoint Hit: api/feature-flags")
 
@@ -56,14 +56,14 @@ func getOrGenerateUID(r *http.Request) string {
 		return uuid.Must(uuid.NewRandom()).String()
 	}
 
-	log.Println("user_id sent %s, \n", qUserID[0])
+	log.Printf("user_id sent %s, \n", qUserID[0])
 	return qUserID[0]
 }
 
 func isTestUser(r *http.Request) bool {
 	cookie, err := r.Cookie("__test_user")
 	if err != nil || cookie == nil || cookie.Value != "true" {
-		log.Printf("Cant find cookie __test_user :\n")
+		log.Printf("Cant find cookie set for __test_user :\n")
 		log.Println(err, cookie)
 		return false
 	}
