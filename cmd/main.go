@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"optfeatureflags/ppkg/featureflags"
-
 )
 
 func main() {
